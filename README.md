@@ -25,3 +25,10 @@ u
 - right = 4, s[right] = 'b', already in seen at index 1. Move left = 2. `Update seen` = {'a': 3, 'b': 4, 'c': 2}.
 - right = 5, s[right] = 'c', already in seen at index 2. Move left = 3. `Update seen` = {'a': 3, 'b': 4, 'c': 5}.
 - right = 6, s[right] = 'b', already in seen at index 4. Move left = 5. `Update seen` = {'a': 3, 'b': 6, 'c': 5}.
+
+
+**Key Points:**
+
+- `Ownership and Borrowing`: Understand the concepts of `ownership` and borrowing in Rust. When a value is moved, its ownership is transferred, and you can no longer use it in its original scope.
+- `Lifetime Annotations`: In more complex scenarios, you might need to use `lifetime annotations` to ensure that references are valid.
+- `Cloning`: Cloning a `HashMap` can be expensive, especially for large HashMaps. Use it judiciously.

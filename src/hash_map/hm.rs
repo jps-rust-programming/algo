@@ -12,9 +12,10 @@ pub fn create_hashmap() {
         println!("Removed value: {}", rm);
     }
     println!("Hash map: {:?}", map);
-    if find_key(&mut map, "key1"){
+    if find_key(&mut map, "key1") {
         println!("key exist!")
     }
+    looping_element(&mut map);
 }
 
 pub fn get_value() {
@@ -38,9 +39,15 @@ pub fn remove_value(map: &mut HashMap<String, i32>, key: &str) -> Option<i32> {
 }
 
 pub fn find_key(map: &mut HashMap<String, i32>, key: &str) -> bool {
-    map.contains_key("key")
+    map.contains_key(key)
 }
 
-pub fn looping_element(){
-    
+pub fn looping_element(map: &mut HashMap<String, i32>) {
+    *map.entry("key4".to_string()).or_insert(100);
+
+    for (key, value) in map {
+        println!("key: {} value: {}", key, value);
+    }
+    println!("Length: {}", map.len());
+    println!("Capacity: {}", map.capacity());
 }
