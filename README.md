@@ -41,30 +41,40 @@ Developing strong code analysis skills in Rust is essential for writing efficien
 
 ### Understanding the Problem:
 
-Like in any language, the first step is to understand the problem the code is solving. Focus on the problem statement, expected input and output, and the goal of the code.
+- Like in any language, the first step is to understand the problem the code is solving. Focus on the problem statement, expected input and output, and the goal of the code.
 
 #### Code Structure and Design:
 
-Modularity: Is the code divided into smaller, reusable functions or modules? Rust encourages modularity through functions, structs, and enums. The use of these constructs can often make the code more readable and testable.
-Data Flow: Trace how data moves through the code. For example, how are variables passed between functions? In Rust, ownership plays a huge role in data movement and needs to be carefully tracked.
-Rust's Ownership, Borrowing, and Lifetimes:
+- `Modularity`: Is the code divided into smaller, reusable functions or modules? Rust encourages modularity through functions, structs, and enums. The use of these constructs can often make the code more readable and testable.
 
-Ownership: Rust's ownership system ensures memory safety without a garbage collector. Every piece of data has one owner, and when ownership is transferred, the original owner can no longer access that data.
-Borrowing: Rust allows borrowing of data via references. There are two types of borrowing: immutable (&T) and mutable (&mut T), and borrowing must adhere to strict rules.
-Lifetimes: Lifetimes specify how long references are valid and prevent dangling references. Code analysis in Rust often requires ensuring that lifetimes are correctly annotated to avoid issues.
-Memory Safety and Performance:
+- `Data Flow`: Trace how data moves through the code. For example, how are variables passed between functions? In Rust, ownership plays a huge role in data movement and needs to be carefully tracked.
 
-Memory Leaks and Unsafe Code: While Rust ensures memory safety through ownership, borrowing, and lifetimes, it allows developers to use unsafe blocks for low-level memory manipulation. Analyze code for potential risks when using unsafe.
-Zero-Cost Abstractions: Rust emphasizes zero-cost abstractions, where higher-level abstractions should not introduce overhead. It’s essential to understand the performance implications of abstractions like iterators or closures.
-Concurrency:
+#### Rust's Ownership, Borrowing, and Lifetimes:
 
-Rust has a strong focus on safe concurrency. You should analyze code for the correct use of Rust's concurrency tools (e.g., Arc, Mutex, RwLock, async/await) and ensure that data races or other concurrency issues are avoided.
-Error Handling:
+- `Ownership`: Rust's ownership system ensures memory safety without a garbage collector. Every piece of data has one owner, and when ownership is transferred, the original owner can no longer access that data.
 
-Rust uses Result and Option types for error handling instead of exceptions, which encourages explicit handling of errors. Code should be analyzed to ensure errors are handled in a way that guarantees the program’s robustness.
-Testing:
+- `Borrowing`: Rust allows borrowing of data via references. There are two types of borrowing: immutable (&T) and mutable (&mut T), and borrowing must adhere to strict rules.
 
-Rust's built-in test framework makes it easy to write unit tests. Ensuring that the code has adequate test coverage is a key aspect of code analysis. Look for proper test cases and edge cases in the code.
-Code Readability and Style:
+`Lifetimes`: Lifetimes specify how long references are valid and prevent dangling references. Code analysis in Rust often requires ensuring that lifetimes are correctly annotated to avoid issues.
 
-Rust has a rich set of idioms and patterns, such as Pattern Matching, Rust Iterators, Error Propagation with ?, and Result and Option chaining. It's essential to ensure the code adheres to the Rust style guide and is readable for others.
+#### Memory Safety and Performance:
+
+- `Memory Leaks and Unsafe Code`: While Rust ensures memory safety through ownership, borrowing, and lifetimes, it allows developers to use unsafe blocks for low-level memory manipulation. Analyze code for potential risks when using unsafe.
+- `Zero-Cost Abstractions`: Rust emphasizes zero-cost abstractions, where higher-level abstractions should not introduce overhead. It’s essential to understand the performance implications of abstractions like iterators or closures.
+
+#### Concurrency:
+
+- Rust has a strong focus on safe concurrency. You should analyze code for the correct use of Rust's concurrency tools (e.g., `Arc`, `Mutex`, `RwLock`, `async/await`) and ensure that data races or other concurrency issues are avoided.
+
+#### Error Handling:
+
+- Rust uses Result and Option types for `error handling` instead of `exceptions`, which encourages explicit handling of errors. - 
+- Code should be analyzed to ensure errors are handled in a way that guarantees the program’s robustness.
+
+#### Testing:
+
+- Rust's `built-in` test framework makes it easy to write unit tests. Ensuring that the code has adequate test coverage is a key aspect of code analysis. Look for proper test cases and edge cases in the code.
+
+#### Code Readability and Style:
+
+- Rust has a rich set of idioms and patterns, such as `Pattern Matching`, `Rust Iterators`, `Error Propagation` with `?`, and `Result` and `Option` chaining. It's essential to ensure the code adheres to the Rust style guide and is readable for others.
