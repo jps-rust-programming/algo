@@ -53,7 +53,7 @@ Developing strong code analysis skills in Rust is essential for writing efficien
 
 - `Ownership`: Rust's ownership system ensures memory safety without a garbage collector. Every piece of data has one owner, and when ownership is transferred, the original owner can no longer access that data.
 
-- `Borrowing`: Rust allows borrowing of data via references. There are two types of borrowing: immutable (&T) and mutable (&mut T), and borrowing must adhere to strict rules.
+- `Borrowing`: Rust allows borrowing of data via references. There are two types of borrowing: `immutable` (&T) and `mutable` (&mut T), and borrowing must adhere to strict rules.
 
 `Lifetimes`: Lifetimes specify how long references are valid and prevent dangling references. Code analysis in Rust often requires ensuring that lifetimes are correctly annotated to avoid issues.
 
@@ -68,7 +68,7 @@ Developing strong code analysis skills in Rust is essential for writing efficien
 
 #### Error Handling:
 
-- Rust uses Result and Option types for `error handling` instead of `exceptions`, which encourages explicit handling of errors. - 
+- Rust uses Result and Option types for `error handling` instead of `exceptions`, which encourages explicit handling of errors. -
 - Code should be analyzed to ensure errors are handled in a way that guarantees the program’s robustness.
 
 #### Testing:
@@ -78,3 +78,5 @@ Developing strong code analysis skills in Rust is essential for writing efficien
 #### Code Readability and Style:
 
 - Rust has a rich set of idioms and patterns, such as `Pattern Matching`, `Rust Iterators`, `Error Propagation` with `?`, and `Result` and `Option` chaining. It's essential to ensure the code adheres to the Rust style guide and is readable for others.
+
+> Note: Observability practices and toolchains (`Monitoring`, `Metrics`, `Logging`, `Alerts` & `Tracing`)
