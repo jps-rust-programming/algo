@@ -48,6 +48,6 @@ pub fn looping_element(map: &mut HashMap<String, i32>) {
     for (key, value) in map {
         println!("key: {} value: {}", key, value);
     }
-    println!("Length: {}", map.len());
-    println!("Capacity: {}", map.capacity());
+    // println!("Length: {}", map.len());
+    // println!("Capacity: {}", map.capacity());
 }
